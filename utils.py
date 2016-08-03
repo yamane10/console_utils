@@ -138,9 +138,8 @@ def query_yes_no(prompt, default='yes'):
 		"n": "no"
 		}
 	response = input(prompt)
-	valid = False
 	
-	while not valid:
+	while True:
 		if response == '':
 			output = default
 			break
