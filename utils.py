@@ -114,3 +114,41 @@ def query_select(question, choices, default=None, max_columns=3, multi=True):
 		output = choice_dict[int(selections.strip(' '))]
 
 	return output
+	
+def query_yes_no(prompt, default='yes'):
+	"""
+	Function for prompting user to answer yes or no to a given prompt.
+	
+	Usage:
+		>>> query_yes_no("Accept match?")
+		
+		prints:
+			Accept match? (yes or no): 
+			
+		If user enters "y", "ye", or "yes", the function will return "yes".
+		If user enters "n" or "no", the function will return "no".
+		If user enters nothing, the default value is returned.
+	"""
+	prompt = prompt + " (yes or no): "
+	valid_choices = {
+		"yes": "yes", 
+		"ye": "yes", 
+		"y": "yes",
+		"no": "no", 
+		"n": "no"
+		}
+	response = input(prompt)
+	valid = False
+	
+	while not valid:
+		if response == '':
+			output = default
+			break
+		elif response in valid_choices:
+			output = valid_choices[response]
+			break
+		print("Invalid response '{}'. Please enter y or n.".format(response))
+		response = input(prompt)
+	
+	return output
+			
