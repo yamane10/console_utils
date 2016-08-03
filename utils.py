@@ -1,4 +1,34 @@
 def query_select(question, choices, default=None, max_columns=3, multi=True):
+	"""
+	Function for creating prompt to select a choice from a list of choices.
+	
+	Based on the provided max_columns, the function will determine the best 
+	column arrangement and create columns of numbered choices, prompting the 
+	user to enter a choice (by number).
+	
+	The function will return the value of the selected choice.
+	
+	Usage:
+		>>> favorite_color = query_select(
+			"What's your favorite color?", 
+			["Red", "Orange", "Yellow", 
+				"Green", "Blue", "Indigo", 
+				"Violet", "Brown", "Black", 
+				"White"], 
+			max_columns=2, 
+			multi=False)
+			
+		prints:
+			What's your favorite color?
+			 1) Red	 	 6) Indigo
+			 2) Orange	 7) Violet
+			 3) Yellow	 8) Brown
+			 4) Green	 9) Black
+			 5) Blue	10) White
+			Enter selection (by number):
+			
+		If the user enters "10", the function will return "White".
+	"""
 	number_of_choices = len(choices)
 	columns = []
 	longest_choice = sorted(choices, key=lambda c: len(c), reverse=True)[0]
@@ -51,7 +81,7 @@ def query_select(question, choices, default=None, max_columns=3, multi=True):
 		for column in columns:
 			try: row.append(column[i])
 			except: pass
-		print("\t".join(["{}) {}".format(str(number).rjust(2), choice).ljust(len(longest_choice)) for (number, choice) in row]))
+		print("\t".join(["{}) {}".format(str(number).rjust(2), choice).ljust(len(longest_choice) + 5) for (number, choice) in row]))
 	
 	plural = ''
 	if multi:
