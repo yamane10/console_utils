@@ -5,5 +5,5 @@ setup(
 	version = "0.1.0",
 	author="Josh Yamane",
 	author_email="joshua.yamane@kwe.com",
-	py_modules = ["console_utils"]
+	packages = ["console_utils"]
 	)
