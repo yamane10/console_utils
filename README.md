@@ -13,13 +13,14 @@ Usage:
 
 ```python
 favorite_color = query_select(
-"What's your favorite color?",
-["Red", "Orange", "Yellow",
-	"Green", "Blue", "Indigo",
-	"Violet", "Brown", "Black",
-	"White"],
-max_columns=2,
-multi=False)
+	"What's your favorite color?",
+	["Red", "Orange", "Yellow",
+		"Green", "Blue", "Indigo",
+		"Violet", "Brown", "Black",
+		"White"],
+	max_columns=2,
+	multi=False
+	)
 ```
 
 Prints the following to the console:
@@ -95,6 +96,11 @@ the cli command was run with a `verbal` setting of `True`. This allows for the
 writing of cli commands that have a `--silent` flag, or commands that only 
 print the status of the operation to the console if a `--verbal` flag is passed.
 
+Usage:
+
 ```python
 print_verbose(console_text, is_verbose)
 ```
+
+The above `console_text` will only be printed to the console if `is_verbose` is
+`True`.
