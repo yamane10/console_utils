@@ -24,7 +24,7 @@ multi=False)
 
 Prints the following to the console:
 
-```python
+```text
 What's your favorite color?
  1) Red      6) Indigo
  2) Orange   7) Violet
@@ -46,7 +46,7 @@ response = query_yes_no("Accept match?")
 
 Prints the following to the console:
 
-```python	
+```text	
 Accept match? (yes or no):
 ```
 
@@ -79,7 +79,7 @@ for type_of_apple in types_of_apples:
 
 Prints the following to the console:
 
-```
+```text
 We have 1 pie, and used 3 types of apple when baking:
   -granny smith
   -red delicious
